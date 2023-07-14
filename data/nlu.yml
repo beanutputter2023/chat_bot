@@ -1,0 +1,98 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n  
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: balance_inquiry
+  examples: |
+    - transaction balance
+    - account balance 
+    - check balance
+    - my balance 
+    - I need to see my balance
+    - What's my balance?
+    - I want to check my account balance.
+    - Can you tell me how much money I have?
+    - I need to know how much money I have in my account.
+    - How much money is there in my account?
+
+- intent: give_credentials
+  examples: |
+    - [Pranish](name), [9860844556](number), [6589429A](account)
+    - [kriti](name), [9851045678](number), [1234567A](account)
+    - [7785496B](account), [9865075213](number), [sankhar](name)
+    - [0000429A](account), [9862170443](number), [dristi](name) Sigdel
+    - [0009654B](account), [Selina](name) Maharjan, [9865243158](number)
+    - [9865214369](number), [5593254C](account), [Prajaya](name)
+    - [pranita](name), [9568412355](number), [5267415N](account)
+    - [9632584125](number), [Jenish](name) adhikari, [2668541B](account)
+    - [sagar](name) kafle, [6528451V](account), [9865231458](number)
+    - [6528521T](account), [9862147455](number), [lolita](name)
+    - [Ram](name), [6575351V](account), [9865212357](number)
+    - [6526541A](account), [Sabitri](name), [9885201458](number)
+    - [monsoon](name), [6528541M](account), [9874631458](number)
+
+- intent: transaction_inquiry
+  examples: |
+    - Transaction
+    - Transaction history
+    - Can i get my transaction history
+    - Could you show my transaction for the past month?
+    - Transaction?
+    - Transaction details
+    - transaction account details
+    - account history
+    - history details
+    
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

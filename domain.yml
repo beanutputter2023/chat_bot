@@ -1,0 +1,87 @@
+version: "3.1"
+
+entities:
+  - account
+  - name
+  - number
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  account:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: account
+  number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: number
+  function:
+    type: text
+    mappings:
+      - type: custom
+  balance:
+    type: text
+    mappings:
+      - type: custom
+
+actions:
+  - custom_select_function
+  - custom_logic_function
+  - action_clear_slots
+
+intents:
+  - greet
+  - balance_inquiry
+  - give_credentials
+  - transaction_inquiry
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hello there! how may I help you?"
+
+  utter_assistance:
+  - text: "Select SERVICES: Check balance or transaction history?"
+
+  utter_ask_credentials:
+  - text: "Sure. Could you provide name, phone number and account number in sequence?"
+
+  utter_balance_info:
+  - text: "Dear {name}, your {account} has a balance of Rs. {balance}"
+
+  utter_transaction_info:
+  - text: "Dear {name}, your {account} account's  transaction history is: \n{balance}"
+
+  utter_anything_else:
+    - text: "Do you need help with anything else? (Y/N)"
+
+  utter_credentials_mismatch:
+    - text: "Your credentials: {name}, {number}, and {account} does not match"
+
+  utter_try_again:
+    - text: "wanna try again? (Y/N)"
+
+  utter_goodbye:
+  - text: "Goodbye! Have a great day"
+  
+  utter_please_rephrase:
+  - text: "Apologies, I'm having trouble understanding your input. Could you please phrase it differently?"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_example:
+  - text: "example: prajwal, 9876543210, 0123456A"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

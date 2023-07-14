@@ -1,0 +1,4 @@
+.rasa/
+models/
+# virtual environment
+pmt/

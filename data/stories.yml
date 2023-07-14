@@ -1,0 +1,55 @@
+version: "3.1"
+
+stories:
+
+- story: normal initial conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  
+- story: balance_inquiry ..
+  steps:
+  - intent: balance_inquiry
+  - action: custom_select_function
+  - action: utter_ask_credentials
+  - action: utter_example
+
+- story: transaction_history ..
+  steps:
+  - intent: transaction_inquiry
+  - action: custom_select_function
+  - action: utter_ask_credentials
+  - action: utter_example
+
+
+- story: inquiry cont.
+  steps:
+  - intent: give_credentials
+    entities:
+    - name: suraj
+    - number: 9865412356
+    - account: 2168468M
+  - action: custom_logic_function
+  - action: utter_anything_else
+
+- story: balance_inquiry cont.
+  steps:
+  - intent: give_credentials
+  - action: custom_logic_function
+  - action: utter_balance_info
+  - action: utter_anything_else
+
+- story: transaction_inquiry cont.
+  steps:
+  - intent: give_credentials
+  - action: custom_logic_function
+  - action: utter_transaction_info
+  - action: utter_anything_else
+
+- story: credentials mismatch
+  steps:
+  - intent: give_credentials
+  - action: custom_logic_function
+  - action: utter_credentials_mismatch
+  - action: utter_try_again
